@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Aptera.JS", "Aptera.JS\", "{0C38A874-FD35-4436-B74D-3675756775F9}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55074"
+		Debug.AspNetCompiler.PhysicalPath = "Aptera.JS\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55074\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55074"
+		Release.AspNetCompiler.PhysicalPath = "Aptera.JS\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55074\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55074"
+		SlnRelativePath = "Aptera.JS\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Aptera.JS.Tests", "Aptera.JS.Tests\", "{33A670CE-240B-4D3D-B356-74870B523E74}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55075"
+		Debug.AspNetCompiler.PhysicalPath = "Aptera.JS.Tests\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55075\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55075"
+		Release.AspNetCompiler.PhysicalPath = "Aptera.JS.Tests\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55075\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55075"
+		SlnRelativePath = "Aptera.JS.Tests\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C38A874-FD35-4436-B74D-3675756775F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C38A874-FD35-4436-B74D-3675756775F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A670CE-240B-4D3D-B356-74870B523E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A670CE-240B-4D3D-B356-74870B523E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

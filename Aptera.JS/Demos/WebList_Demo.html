@@ -2,111 +2,87 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 
     <link href="../styles/bootstrap.css" rel="stylesheet" />
     <link href="../styles/bootstrap-theme.css" rel="stylesheet" />
     <link href="../styles/site.css" rel="stylesheet" />
 </head>
 <body>
-
-    <div id="mergeListDemo">
-        <h1>Merge List Demo</h1>
-        <ul class="nav1 another-class">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Content</a></li>
-            <li><a href="#">About Us</a></li>
-        </ul>
-        <br />
-        <br />
-        <ul class="nav2">
-            <li><a href="#">Features</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Blogs</a></li>
-            <li><a href="#">Gallary</a></li>
-        </ul>
-        <br />
-        <br />
-        <ul class="nav3">
-            <li><a href="#">Sub Menu 1</a></li>
-            <li><a href="#">Sub Menu 2</a></li>
-            <li><a href="#">Sub Menu 3</a></li>
-        </ul>
-        <ul class="nav4">
-            <li><a href="#">Sub Menu 1</a></li>
-            <li><a href="#">Sub Menu 2</a></li>
-            <li><a href="#">Sub Menu 3</a></li>
-        </ul>
-    </div>
-    <div id="ListReplaceDemo">
-        <div class="container">
-            <h2>The Sprite...</h2>
-            <img src="../images/checkbox-radio-sprite-image.png" />
-            <br /> <br />
-            <h1>Example: Swap default checkbox/radio with Sprite Image</h1>
-            <h2>CHECKBOX</h2>
-            <br />
-            <div class="form-group input-replace">
-                <input type="checkbox">
-                <span class="input-replace-with checkbox"></span>
-                <span class="checkbox-label">Duct Tape</span>
-            </div>
-            <div class="form-group input-replace">
-                <input type="checkbox">
-                <span class="input-replace-with checkbox"></span>
-                <span class="checkbox-label">Chloroform</span>
-            </div>
-            <div class="form-group input-replace">
-                <input type="checkbox">
-                <span class="input-replace-with checkbox"></span>
-                <span class="checkbox-label">Windowless Van</span>
-            </div>
-
-            <div class="result checkbox-console"></div>
-
-            <br />
-            <br />
-            <br />
-            <br />
-            <h2>RADIO BUTTON</h2>
-            <br>
-            <form class="form-group">
-                <div class="input-replace">
-                    <span class="input-replace-with radio"></span>
-                    <input type="radio" name="gender" value="male" />
-                    <span class="radio-label">Male</span>
+    <div class="container">
+        <div id="mergeListDemo">
+            <div class="console-wrapper">
+                <div class="form-group">
+                    <span class="console-display"></span>
+                    <input type="text" class="form-control console" />
+                    <br />
+                    <a href="#" class="btn-primary btn console-submit form-control">Submit</a>
                 </div>
-                <div class="input-replace">
-                    <span class="input-replace-with radio"></span>
-                    <input type="radio" name="gender" value="female" />
-                    <span class="radio-label">Female</span>
-                </div>
-                <div class="input-replace">
-                    <span class="input-replace-with radio"></span>
-                    <input type="radio" name="gender" value="other" />
-                    <span class="radio-label">Other</span>
-                </div>
-            </form>
-            <div class="result radio-console"></div>
+            </div>
+            <h1>Merge List Demo</h1>
+            <ul class="nav1 another-class">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <br />
+            <br />
+            <ul class="nav2">
+                <li><a href="#">Features</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Gallary</a></li>
+            </ul>
+            <br />
+            <br />
+            <ul class="nav3">
+                <li><a href="#">Sub Menu 1</a></li>
+                <li><a href="#">Sub Menu 2</a></li>
+                <li><a href="#">Sub Menu 3</a></li>
+            </ul>
+            <ul class="nav4">
+                <li><a href="#">Sub Menu 1</a></li>
+                <li><a href="#">Sub Menu 2</a></li>
+                <li><a href="#">Sub Menu 3</a></li>
+            </ul>
         </div>
     </div>
-
 </body>
 </html>
+
 <script src="../js/libraries/jquery-3.1.1.min.js"></script>
 <script src="../js/libraries/bootstrap.min.js"></script>
 <script src="../js/aptera.beta-1.0.js"></script>
+
 <script>
     $(document).ready(function () {
+
+        var $console = $(".console");
+        var $submit = $(".console-submit");
+        $submit.click(function () {
+            var command = $console.val();
+            var f = new Function(command);
+            try {
+                f();
+            }
+            catch (e) {
+                command = e.message;
+                console.log(command);
+            }
+            $console.val("");
+            $(".console-display").append("<br />" + command);
+            return false;
+
+        })
 
         var nav1 = $(".nav1");
         var nav2 = $(".nav2");
         var nav3 = $(".nav3");
         var nav4 = $(".nav4");
 
-
         Aptera.Web.List.InitMerge(nav1, nav2, 2);
         Aptera.Web.List.Merge();
+
 
     });
 

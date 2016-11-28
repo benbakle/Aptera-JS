@@ -1,16 +1,14 @@
 ﻿var Aptera = (function () {
 
-    // ::::::::::::::::::::::::::: //
     // :: THE OBJECT TO RETURN :: //
-    // ::::::::::::::::::::::::: //
     var aptera_obj = {};
 
     var Web = (function () {
 
         var web_obj = {};
-        // ::::::::::::::::::::::::: //
-        // :: APTERA WEB LIST OBJECT :: //
-        // ::::::::::::::::::::::: //
+        // :::::::::::::::::::::::::::: //
+        // :: APTERA.WEB.LIST OBJECT :: //
+        // :::::::::::::::::::::::::::: //
         var List = {
             Source: null,
             Target: null,
@@ -45,6 +43,7 @@
                 $("li", this.Source).each(function () {
                     if ($(this).attr("data-source-list") == undefined) {
                         $(this).attr("data-source-list", _self.Source.attr("class"));
+                        $(this).addClass("appended-item");
                     }
                 });
             },
@@ -59,6 +58,7 @@
                         })
                         var $sourceList = $(sourceListClass);
                         $sourceList.append($(this));
+                        $(this).removeClass("appended-item");
                     }
                 })
 
@@ -83,7 +83,7 @@
         }
 
         // :::::::::::::::::::::::::: //
-        // :: APTERA INPUT OBJECT :: //
+        // :: APTERA.WEB.INPUT OBJECT :: //
         // :::::::::::::::::::::::: //
         var Input = {
             Replace: {
@@ -144,8 +144,11 @@
 
     })();
 
+    // ::  VARIABLES/OBJECTS ARE MADE PUBLIC BY :: //
+    // :: ATTACHING THEM TO THE "aptera_obj" OBJECT :: //
     aptera_obj.Web = Web;
 
+    // :: EXPOSE "aptera_obj" OBJECT TO THE WORLD :: //
     return aptera_obj;
 
 

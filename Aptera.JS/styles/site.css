@@ -1,0 +1,54 @@
+﻿body { background-color: #FFF; font-size: 14px; padding: 0; margin: 0; color: #333; }
+h1 { font-weight: 700; margin-bottom: 40px; font-family: century gothic; }
+h2 { color: #333; }
+
+.container { margin: 50px; }
+
+
+#mergeListDemo { background-color: #333; color: #eee; padding: 50px; }
+
+ul.nav1,
+ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
+    ul.nav1 > li { float: left; }
+        ul.nav1 > li > a { display: inline-block; padding: 0px 15px; margin: 10px 0; text-decoration: none; color: #eee; border-right: 1px solid #eee; }
+        ul.nav1 > li:last-child > a { border: 0; }
+        ul.nav1 > li > a:hover { text-decoration: underline; }
+        ul.nav1 > li.appended-item > a:hover { background-color: #555; text-decoration: none; }
+        ul.nav1 > li:last-child:after { content: ""; }
+        ul.nav1 > li > ul { position: absolute; background-color: #fff; list-style: none; padding: 0; margin: 0; display: none; }
+            ul.nav1 > li > ul > li > a { display: block; padding: 15px 30px; text-decoration: none; color: #555; }
+                ul.nav1 > li > ul > li > a:hover { background-color: brown; color: #eee; }
+    ul.nav2 > li a { display: block; text-decoration: none; padding: 20px 15px; background-color: #333; color: #eee; border-bottom: 1px solid #eee; transition: .25s; }
+    ul.nav2 > li:first-child > a { border-top: 1px solid #eee; }
+    ul.nav2 > li > a:hover { background-color: #555; }
+    ul.nav2 > li.appended-item > a:hover { background-color: pink; }
+    ul.nav2 > li > ul { list-style: none; padding: 0; margin: 0; }
+        ul.nav2 > li > ul > li > a { display: block; padding: 20px 30px; text-decoration: none; background-color: #222; color: #ccc; border-bottom: 0; }
+        ul.nav2 > li > ul > li:last-child > a { border-bottom: 1px solid #fff; }
+        ul.nav2 > li > ul > li > a:hover { background-color: brown; }
+        ul.nav2 > li > ul > li > ul { list-style: none; padding: 0; }
+            ul.nav2 > li > ul > li > ul > li > a { padding-left: 50px; border: 0; background-color: #111; color: #ccc; transition: .5s; }
+                ul.nav2 > li > ul > li > ul > li > a:hover { background-color: #d55d5d; }
+.dropdown ul { display: none; }
+.dropdown > a:after { position: relative; font-family: FontAwesome; content: "\f0da"; width: 10px; padding-left: 10px; display: inline-block; }
+.dropdown > a.active { background-color: #444; }
+    .dropdown > a.active:after { content: "\f0d7"; }
+
+.nav .dropdown > a:after:hover { content: "\f0d7"; }
+
+
+
+/* ::::::::::::::::::::::::::::::::: */
+/* :: INPUT REPLACE DEMO STYLING :: */
+/* ::::::::::::::::::::::::::::::: */
+
+.input-replace { position: relative; cursor: pointer; }
+    .input-replace input { display: none; }
+    .input-replace .input-replace-with { position: relative; display: inline-block; padding: 0; margin: 0; width: 50px; height: 40px; background-image: url('../images/checkbox-radio-sprite-image.png'); background-repeat: no-repeat; }
+    .input-replace .checkbox.input-replace-with.active { background-position: -47.5px 0; }
+    .input-replace .checkbox-label,
+    .input-replace .radio-label { display: inline-block; position: absolute; line-height: 30px; top: calc(50% - 15px); left: 75px; font-size: 28px; font-weight: 700; cursor: pointer; padding: 0; margin: 0; }
+    .input-replace .radio.input-replace-with { background-position: -107px 0px; display: inline-block; }
+        .input-replace .radio.input-replace-with.active { background-position: -155px 0px; }
+.result { position: relative; margin-top: 25px; padding: 15px 40px; font-family: courier new; font-size: 20px; color: #ccc; background-color: #333; min-height: 57px; }
+    .result:before { position: absolute; content: ">"; left: 15px; font-weight: 700; color: #5485DB; }

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="../styles/bootstrap.css" rel="stylesheet" />
+    <link href="../styles/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../styles/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="sidebar">
+        <h1><span>a</span>ptera<span>JS</span></h1>
+        <ul class="nav2">
+            <li class="dropdown active">
+                <a href="#" class="active">Aptera.Web</a>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">.Web.List</a>
+                        <ul>
+                            <li><a href="Web.List.Merge.html">.List.Source</a></li>
+                            <li><a href="Web.List.Merge.html">.List.Target</a></li>
+                            <li><a href="Web.List.Merge.html">.List.InsertPosition</a></li>
+                            <li><a href="Web.List.Merge.html">.List.SetSource</a></li>
+                            <li><a href="Web.List.Merge.html">.List.SetTarget</a></li>
+                            <li><a href="Web.List.Merge.html">.List.SetInsertPosition</a></li>
+                            <li><a href="Web.List.Merge.html">.List.Merge</a></li>
+                            <li><a href="Web.List.Merge.html">.List.MergeInit</a></li>
+                            <li><a href="Web.List.Merge.html">.List.Split</a></li>
+                            <li><a href="Web.List.Merge.html">.List.Reverse</a></li>
+                            <li><a href="Web.List.Merge.html">.List.AddClassToListItems</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">.Web.Input</a>
+                        <ul>
+                            <li><a href="Web.Input.Replace.html">.Input.Replace</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Aptera.Web.List.Merge()</h1>
+        <p>
+            The <span class="code-text">.Merge()</span> method executes a merge on two defined lists (<span class="code-text">source</span> and <span class="code-text">target</span>) at a defined position within the <span class="code-text">target</span> list.
+        </p>
+        <h2>Syntax</h2>
+        <code class="code-text">
+            Aptera.Web.List.Merge();
+        </code>
+        <h3>Parameters</h3>
+        <strong>none</strong>
+        <blockquote>
+            <span>NA</span>
+        </blockquote>
+        <h3>Return value</h3>
+        Completes the merge action returns <i>undefined</i>.
+        <h2>Description</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.</p>
+        <span class="note"></span>
+        <h3>Examples</h3>
+        <h2>Using .Merge()</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.</p>
+        <div id="mergeListDemo">
+            <ul class="nav1 another-class">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Content</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+            <br />
+            <br />
+            <ul class="nav2">
+                <li><a href="#">Features</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Blogs</a></li>
+                <li><a href="#">Gallary</a></li>
+            </ul>
+            <ul class="nav3">
+                <li><a href="#">Sponsers</a></li>
+                <li><a href="#">Copyright</a></li>
+                <li><a href="#">Mission</a></li>
+            </ul>
+            <ul class="nav4">
+                <li><a href="#">Main Office</a></li>
+                <li><a href="#">Production</a></li>
+                <li><a href="#">Shipping</a></li>
+            </ul>
+            <div class="console-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="console-display">
+                            <span class="console-display-text">Aptera.Web.List.MergeInit($(".nav1"),$(".nav2"),1)</span>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control console" />
+                            <br />
+                            <a href="javascript:void(0)" class="btn-primary btn console-submit form-control">Submit</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="../js/libraries/jquery-3.1.1.min.js"></script>
+<script src="../js/libraries/bootstrap.min.js"></script>
+<script src="../js/aptera.beta-1.0.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        var $console = $(".console");
+        var $submit = $(".console-submit");
+        $submit.click(function () {
+            var command = $console.val();
+            var f = new Function(command);
+            try {
+                f();
+            }
+            catch (e) {
+                command = e.message;
+                console.log(command);
+            }
+            $console.val("");
+            $(".console-display-text").append("<br />" + command);
+            return false;
+
+        })
+
+        var nav1 = $("#mergeListDemo .nav1");
+        var nav2 = $("#mergeListDemo .nav2");
+        var nav3 = $("#mergeListDemo .nav3");
+        var nav4 = $("#mergeListDemo .nav4");
+
+        Aptera.Web.List.InitMerge(nav1, nav2, 1);
+        //Aptera.Web.List.Merge();
+
+
+
+
+        //:: DROPDOWN ITEMS TOGGLE ::/
+        $(".dropdown > a").click(function () {
+            $(this).siblings("ul").stop(false, false).slideToggle();
+            $(this).toggleClass("active");
+        });
+
+    });
+
+</script>

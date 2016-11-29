@@ -8,23 +8,31 @@
     <link href="styles/site.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <ul class="nav2">
-                    <li>
-                        <a href="Demos/WebList_Demo.html">Aptera.Web.List</a>
-                    </li>
-                    <li>
-                        <a href="Demos/WebInput_Demo.html">Aptera.Web.Input</a>
-                    </li>
-                </ul>
+    <div id="homePage">
+        <div class="sidebar">
+            <h1>ApteraJS</h1>
+            <ul class="nav2">
+                <li><a href="Demos/WebList_Demo.html">Aptera.Web.List</a></li>
+                <li><a href="Demos/WebInput_Demo.html">Aptera.Web.Input</a></li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="container-fluid">
+                The Stuff
             </div>
         </div>
-
     </div>
 </body>
 </html>
 <script src="js/libraries/jquery-3.1.1.min.js"></script>
 <script src="js/libraries/bootstrap.min.js"></script>
 <script src="js/aptera.beta-1.0.js"></script>
+<script>
+    $(document).ready(function () {
+        //:: DROPDOWN ITEMS TOGGLE ::/
+        $(".dropdown > a").click(function () {
+            $(this).siblings("ul").stop(false, false).slideToggle();
+            $(this).toggleClass("active");
+        });
+    });
+</script>

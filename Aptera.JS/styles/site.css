@@ -8,10 +8,10 @@ h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
 #homePage { position: relative; }
 
-.sidebar { display: inline-block; float: left; width: 250px; min-height: 100vh; }
+.sidebar { display: inline-block; float: left; width: 300px; min-height: 100vh; }
     .sidebar h1 { text-align: center; margin: 35px auto; }
 
-.main { min-height: 100vh; padding: 10px 100px; display: inline-block; width: calc(100% - 250px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
+.main { min-height: 100vh; padding: 10px 100px; display: inline-block; width: calc(100% - 300px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
 
 
 .console-wrapper { }

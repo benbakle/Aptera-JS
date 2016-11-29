@@ -1,42 +1,56 @@
-﻿body { background-color: #FFF; font-size: 14px; padding: 0; margin: 0; color: #333; }
+﻿@import url('font-awesome.css');
+body { background-color: #2F4050; color: #e1e1e1; font-size: 14px; padding: 0; margin: 0; }
 h1 { font-weight: 700; margin-bottom: 40px; font-family: century gothic; }
-h2 { color: #333; }
+h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
-.console-wrapper { max-width: 750px; }
-    .console-wrapper:before { position: absolute; content: "Commands >"; font-size: 28px; left: -175px; top: 0px; font-family: 'Courier New'; }
-    .console-wrapper .console-display { font-family: 'Courier New'; }
-#mergeListDemo { position: relative; background-color: #333; color: #eee; padding: 50px; }
-    #mergeListDemo .console-wrapper { position: absolute; width: 450px; right: 50px; top: 100px; }
-    #mergeListDemo .console-display { position: absolute; bottom: 115px; }
+#homePage { position: relative; }
 
 
+.sidebar { display: inline-block; float: left; width: 250px; min-height: 100vh; }
+    .sidebar h1 { text-align: center; margin: 35px auto; }
+
+.main { min-height: 100vh; padding: 25px 100px; display: inline-block; width: calc(100% - 250px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
+
+
+.console-wrapper { }
+.console-display { font-family: 'Courier New'; }
+
+#mergeListDemo { position: relative; }
+    #mergeListDemo .console-wrapper { display: block; position: relative; border-top: 1px solid #ccc; }
+    #mergeListDemo .console-display { position: relative; height: 100px; width: 100%; background-color: #333; color: #eee; overflow: hidden; padding: 15px; }
+    #mergeListDemo .console-wrapper input { float: left; display: inline-block; width: calc(100% - 150px); padding-left: 30px; font-family: "Courier New"; font-size: 16px; font-weight: 700; color: #333; margin: 25px 0; }
+    #mergeListDemo .console-wrapper .console-submit { float: right; width: 100px; margin: 3px 0 3px 15px; }
+    #mergeListDemo .console-wrapper .form-group:before { position: absolute; content: ">"; font-size: 24px; left: 25px; top: 25px; font-family: 'Courier New'; font-weight: 700; z-index: 10; }
 
 ul.nav1,
 ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
     ul.nav1 > li { float: left; }
-        ul.nav1 > li > a { display: inline-block; padding: 0px 15px; margin: 10px 0; text-decoration: none; color: #eee; border-right: 1px solid #eee; }
+        ul.nav1 > li > a { display: inline-block; padding: 0px 15px; margin: 10px 0; text-decoration: none; color: #333; border-right: 1px solid #eee; }
         ul.nav1 > li:last-child > a { border: 0; }
         ul.nav1 > li > a:hover { text-decoration: underline; }
-        ul.nav1 > li.appended-item > a:hover { background-color: #555; text-decoration: none; }
+        ul.nav1 > li.appended-item > a:hover { text-decoration: none; }
         ul.nav1 > li:last-child:after { content: ""; }
         ul.nav1 > li > ul { position: absolute; background-color: #fff; list-style: none; padding: 0; margin: 0; display: none; }
             ul.nav1 > li > ul > li > a { display: block; padding: 15px 30px; text-decoration: none; color: #555; }
                 ul.nav1 > li > ul > li > a:hover { background-color: brown; color: #eee; }
-    ul.nav2 > li a { display: block; text-decoration: none; padding: 20px 15px; background-color: #333; color: #eee; border-bottom: 1px solid #eee; transition: .25s; }
-    ul.nav2 > li:first-child > a { border-top: 1px solid #eee; }
-    ul.nav2 > li > a:hover { background-color: #555; }
+
+    ul.nav2 > li a { display: block; text-decoration: none; padding: 20px 15px; background-color: #0F2131; color: #eee; transition: .25s; }
+    ul.nav2 li > a:hover { text-decoration: underline; }
     ul.nav2 > li.appended-item > a:hover { background-color: pink; }
     ul.nav2 > li > ul { list-style: none; padding: 0; margin: 0; }
-        ul.nav2 > li > ul > li > a { display: block; padding: 20px 30px; text-decoration: none; background-color: #222; color: #ccc; border-bottom: 0; }
-        ul.nav2 > li > ul > li:last-child > a { border-bottom: 1px solid #fff; }
-        ul.nav2 > li > ul > li > a:hover { background-color: brown; }
+        ul.nav2 > li > ul > li > a { display: block; padding: 10px 30px; text-decoration: none; background-color: #1D2E3E; color: #eee; }
+            ul.nav2 > li > ul > li > a:hover { /*background-color: #FFB200;*/ }
         ul.nav2 > li > ul > li > ul { list-style: none; padding: 0; }
-            ul.nav2 > li > ul > li > ul > li > a { padding-left: 50px; border: 0; background-color: #111; color: #ccc; transition: .5s; }
-                ul.nav2 > li > ul > li > ul > li > a:hover { background-color: #d55d5d; }
+            ul.nav2 > li > ul > li > ul > li > a { padding: 10px 0; padding-left: 50px; border: 0; background-color: #637381; color: #eee; transition: .5s; }
+                ul.nav2 > li > ul > li > ul > li > a:hover { /*background-color: #ccc;*/ }
 .dropdown ul { display: none; }
+li.active > ul { display: block; }
 .dropdown > a:after { position: relative; font-family: FontAwesome; content: "\f0da"; width: 10px; padding-left: 10px; display: inline-block; }
-.dropdown > a.active { background-color: #444; }
-    .dropdown > a.active:after { content: "\f0d7"; }
+.dropdown > a.active { }
+
+ul.nav2 > li > ul > li.dropdown > a.active { /*background-color: #ffb200; color:#333;*/ }
+
+.dropdown > a.active:after { content: "\f0d7"; }
 
 .nav .dropdown > a:after:hover { content: "\f0d7"; }
 

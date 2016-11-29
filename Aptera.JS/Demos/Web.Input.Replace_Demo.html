@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="../styles/bootstrap.css" rel="stylesheet" />
+    <link href="../styles/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../styles/site.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="ListReplaceDemo">
+        <div class="sidebar">
+            <h1>ApteraJS</h1>
+            <ul class="nav2">
+                <li class="dropdown">
+                    <a href="#">Aptera.Web</a>
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#">.List</a>
+                            <ul>
+                                <li><a href="Web.List.Merge_Demo.html">.Merge</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">.Input</a>
+                            <ul>
+                                <li><a href="Web.Input.Replace_Demo.html">.Replace</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="container-fluid">
+                <h2>The Sprite...</h2>
+                <img src="../images/checkbox-radio-sprite-image.png" />
+                <br /> <br />
+                <h1>Example: Swap default checkbox/radio with Sprite Image</h1>
+                <h2>CHECKBOX</h2>
+                <br />
+                <div class="form-group input-replace">
+                    <input type="checkbox">
+                    <span class="input-replace-with checkbox"></span>
+                    <span class="checkbox-label">Duct Tape</span>
+                </div>
+                <div class="form-group input-replace">
+                    <input type="checkbox">
+                    <span class="input-replace-with checkbox"></span>
+                    <span class="checkbox-label">Chloroform</span>
+                </div>
+                <div class="form-group input-replace">
+                    <input type="checkbox">
+                    <span class="input-replace-with checkbox"></span>
+                    <span class="checkbox-label">Windowless Van</span>
+                </div>
+
+                <div class="result checkbox-console"></div>
+
+                <br />
+                <br />
+                <br />
+                <br />
+                <h2>RADIO BUTTON</h2>
+                <br>
+                <form class="form-group">
+                    <div class="input-replace">
+                        <span class="input-replace-with radio"></span>
+                        <input type="radio" name="gender" value="male" />
+                        <span class="radio-label">Male</span>
+                    </div>
+                    <div class="input-replace">
+                        <span class="input-replace-with radio"></span>
+                        <input type="radio" name="gender" value="female" />
+                        <span class="radio-label">Female</span>
+                    </div>
+                    <div class="input-replace">
+                        <span class="input-replace-with radio"></span>
+                        <input type="radio" name="gender" value="other" />
+                        <span class="radio-label">Other</span>
+                    </div>
+                </form>
+                <div class="result radio-console"></div>
+            </div>
+        </div>
+        </div>
+
+</body>
+</html>
+<script src="../js/libraries/jquery-3.1.1.min.js"></script>
+<script src="../js/libraries/bootstrap.min.js"></script>
+<script src="../js/aptera.beta-1.0.js"></script>
+<script>
+    $(document).ready(function () {
+        var $inputReplace = $(".input-replace");
+        Aptera.Web.Input.Replace.Init($inputReplace);
+
+
+        //:: DROPDOWN ITEMS TOGGLE ::/
+        $(".dropdown > a").click(function () {
+            $(this).siblings("ul").stop(false, false).slideToggle();
+            $(this).toggleClass("active");
+        });
+    
+    });
+
+</script>

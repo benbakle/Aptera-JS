@@ -1,15 +1,17 @@
 ﻿@import url('font-awesome.css');
 body { background-color: #2F4050; color: #e1e1e1; font-size: 14px; padding: 0; margin: 0; }
 h1 { font-weight: 700; margin-bottom: 40px; font-family: century gothic; }
+    h1 span { color: #fcbe16; font-weight: 700; }
 h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
-#homePage { position: relative; }
+.code-text { font-family: "Courier New"; font-weight:700;}
 
+#homePage { position: relative; }
 
 .sidebar { display: inline-block; float: left; width: 250px; min-height: 100vh; }
     .sidebar h1 { text-align: center; margin: 35px auto; }
 
-.main { min-height: 100vh; padding: 25px 100px; display: inline-block; width: calc(100% - 250px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
+.main { min-height: 100vh; padding: 10px 100px; display: inline-block; width: calc(100% - 250px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
 
 
 .console-wrapper { }
@@ -17,16 +19,16 @@ h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
 #mergeListDemo { position: relative; }
     #mergeListDemo .console-wrapper { display: block; position: relative; border-top: 1px solid #ccc; }
-    #mergeListDemo .console-display { position: relative; height: 200px; width: 100%; background-color: #333; color: #eee; overflow: hidden; padding: 15px; }
-    #mergeListDemo .console-display-text { position: absolute; bottom:10px; }
-    #mergeListDemo .console-wrapper input { float: left; display: inline-block; width: calc(100% - 150px); padding-left: 30px; font-family: "Courier New"; font-size: 16px; font-weight: 700; color: #333; margin: 25px 0; background-color:transparent; }
+    #mergeListDemo .console-display { position: relative; height: 100px; width: 100%; background-color: #333; color: #eee; overflow: hidden; padding: 15px; }
+    #mergeListDemo .console-display-text { position: absolute; bottom: 10px; }
+    #mergeListDemo .console-wrapper input { float: left; display: inline-block; width: calc(100% - 150px); padding-left: 30px; font-family: "Courier New"; font-size: 16px; font-weight: 700; color: #333; margin: 25px 0; background-color: transparent; }
     #mergeListDemo .console-wrapper .console-submit { float: right; width: 100px; margin: 3px 0 3px 15px; }
-    #mergeListDemo .console-wrapper .form-group:before { position: absolute; content: ">"; color:#5485DB; font-size: 24px; left: 25px; bottom: 25px; font-family: 'Courier New'; font-weight: 700; z-index: 10; }
+    #mergeListDemo .console-wrapper .form-group:before { position: absolute; content: ">"; color: #5485DB; font-size: 24px; left: 25px; bottom: 25px; font-family: 'Courier New'; font-weight: 700; z-index: 10; }
 
 ul.nav1,
 ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
     ul.nav1 > li { float: left; }
-        ul.nav1 > li > a { display: inline-block; padding: 0px 15px; margin: 10px 0; text-decoration: none; color: #333; border-right: 1px solid #eee; }
+        ul.nav1 > li > a { display: inline-block; padding: 0px 15px; margin: 10px 0; text-decoration: none; color: #333; border-right: 1px solid #333; }
         ul.nav1 > li:last-child > a { border: 0; }
         ul.nav1 > li > a:hover { text-decoration: underline; }
         ul.nav1 > li.appended-item > a:hover { text-decoration: none; }

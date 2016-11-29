@@ -18,7 +18,18 @@
                     <li class="dropdown">
                         <a href="#">.Web.List</a>
                         <ul>
+                            <li><a href="Web.List.Merge_Demo.html">.List.Source</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.Target</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.InsertPosition</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.SetSource</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.SetTarget</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.SetInsertPosition</a></li>
                             <li><a href="Web.List.Merge_Demo.html">.List.Merge</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.MergeInit</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.Split</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.Reverse</a></li>
+                            <li><a href="Web.List.Merge_Demo.html">.List.AddClassToListItems</a></li>
+
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -68,8 +79,6 @@
                 <li><a href="#">Blogs</a></li>
                 <li><a href="#">Gallary</a></li>
             </ul>
-            <br />
-            <br />
             <ul class="nav3">
                 <li><a href="#">Sub Menu 1</a></li>
                 <li><a href="#">Sub Menu 2</a></li>
@@ -83,13 +92,13 @@
             <div class="console-wrapper">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="console-display"></div>
-                    </div>
-                    <div class="col-md-12">
+                        <div class="console-display">
+                            <span class="console-display-text"></span>
+                        </div>
                         <div class="form-group">
                             <input type="text" class="form-control console" />
                             <br />
-                            <a href="#" class="btn-primary btn console-submit form-control">Submit</a>
+                            <a href="javascript:void(0)" class="btn-primary btn console-submit form-control">Submit</a>
                         </div>
                     </div>
 
@@ -120,7 +129,7 @@
                 console.log(command);
             }
             $console.val("");
-            $(".console-display").prepend(command + "<br />");
+            $(".console-display-text").append("<br />" + command);
             return false;
 
         })

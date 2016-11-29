@@ -17,10 +17,11 @@ h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
 #mergeListDemo { position: relative; }
     #mergeListDemo .console-wrapper { display: block; position: relative; border-top: 1px solid #ccc; }
-    #mergeListDemo .console-display { position: relative; height: 100px; width: 100%; background-color: #333; color: #eee; overflow: hidden; padding: 15px; }
-    #mergeListDemo .console-wrapper input { float: left; display: inline-block; width: calc(100% - 150px); padding-left: 30px; font-family: "Courier New"; font-size: 16px; font-weight: 700; color: #333; margin: 25px 0; }
+    #mergeListDemo .console-display { position: relative; height: 200px; width: 100%; background-color: #333; color: #eee; overflow: hidden; padding: 15px; }
+    #mergeListDemo .console-display-text { position: absolute; bottom:10px; }
+    #mergeListDemo .console-wrapper input { float: left; display: inline-block; width: calc(100% - 150px); padding-left: 30px; font-family: "Courier New"; font-size: 16px; font-weight: 700; color: #333; margin: 25px 0; background-color:transparent; }
     #mergeListDemo .console-wrapper .console-submit { float: right; width: 100px; margin: 3px 0 3px 15px; }
-    #mergeListDemo .console-wrapper .form-group:before { position: absolute; content: ">"; font-size: 24px; left: 25px; top: 25px; font-family: 'Courier New'; font-weight: 700; z-index: 10; }
+    #mergeListDemo .console-wrapper .form-group:before { position: absolute; content: ">"; color:#5485DB; font-size: 24px; left: 25px; bottom: 25px; font-family: 'Courier New'; font-weight: 700; z-index: 10; }
 
 ul.nav1,
 ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
@@ -41,7 +42,7 @@ ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
         ul.nav2 > li > ul > li > a { display: block; padding: 10px 30px; text-decoration: none; background-color: #1D2E3E; color: #eee; }
             ul.nav2 > li > ul > li > a:hover { /*background-color: #FFB200;*/ }
         ul.nav2 > li > ul > li > ul { list-style: none; padding: 0; }
-            ul.nav2 > li > ul > li > ul > li > a { padding: 10px 0; padding-left: 50px; border: 0; background-color: #637381; color: #eee; transition: .5s; }
+            ul.nav2 > li > ul > li > ul > li > a { padding: 5px 0; padding-left: 50px; border: 0; background-color: #637381; color: #eee; transition: .5s; }
                 ul.nav2 > li > ul > li > ul > li > a:hover { /*background-color: #ccc;*/ }
 .dropdown ul { display: none; }
 li.active > ul { display: block; }

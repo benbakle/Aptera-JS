@@ -14,14 +14,14 @@
             Target: null,
             InsertPostion: null,
             Reverse: false,
-            InitMerge: function (source, target, position) {
+            MergeInit: function (source, target, position) {
                 this.SetSource(source);
                 this.SetTarget(target);
                 this.SetInsertPosition(position);
             },
             SetSource: function (source) {
                 this.Source = source;
-                this.SetDataListSource();
+                this.SetDataSourceList();
             },
             SetTarget: function (target) {
                 this.Target = target;
@@ -30,20 +30,20 @@
                 this.InsertPosition = position;
             },
             Merge: function () {
-                var ulItems = this.GetListItems(this.Source);
+                var ulItems = this.Items(this.Source);
                 var position = this.InsertPosition;
-                if (this.GetListLength(this.Target) == 0) {
+                this.AddClassToItems(this.Source, "appended-item");
+                if (this.ItemCount(this.Target) == 0) {
                     this.Target.append(ulItems);
                 } else {
                     (position == 1) ? ulItems.insertBefore($('> li:first-child', this.Target)) : ulItems.insertAfter($('> li:nth-child(' + (position - 1) + ')', this.Target))
                 }
             },
-            SetDataListSource: function () {
+            SetDataSourceList: function () {
                 _self = this;
                 $("li", this.Source).each(function () {
                     if ($(this).attr("data-source-list") == undefined) {
                         $(this).attr("data-source-list", _self.Source.attr("class"));
-                        $(this).addClass("appended-item");
                     }
                 });
             },
@@ -63,10 +63,10 @@
                 })
 
             },
-            GetListItems: function (ul) {
+            Items: function (ul) {
                 return $('> li', ul);
             },
-            GetListLength: function (ul) {
+            ItemCount: function (ul) {
                 return ul.find(">li").length;
             },
             Reverse: function (ul) {
@@ -74,7 +74,7 @@
                     ul.prepend(li).addClass("reversed")
                 });
             },
-            AddClassToListItems: function (ul, className) {
+            AddClassToItems: function (ul, className) {
                 $("li", ul).each(function () {
                     $(this).addClass(className);
                 });
@@ -155,18 +155,3 @@
 
 
 })();
-
-
-
-
-
-
-//var nav1 = $(".nav1");
-//var nav2 = $(".nav2");
-//var nav3 = $(".nav3");
-//var nav4 = $(".nav4");
-//Aptera.List.InitMerge(nav1, nav2, 2);
-//Aptera.List.Merge();
-
-//var $inputReplace = $(".input-replace");
-//Aptera.Input.Replace.Init($inputReplace);

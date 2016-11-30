@@ -18,17 +18,14 @@
                     <li class="dropdown">
                         <a href="#">.List</a>
                         <ul>
-                            <li><a href="#">.Source</a></li>
-                            <li><a href="#/">.Target</a></li>
-                            <li><a href="#">.InsertPosition</a></li>
-                            <li><a href="#">.SetSource</a></li>
-                            <li><a href="#">.SetTarget</a></li>
-                            <li><a href="#">.SetInsertPosition</a></li>
+                            <li><a href="#">.AddClassToItems</a></li>
+                            <li><a href="#">.InsertPosition / .SetInsertPosition</a></li>
                             <li><a href="Web.List.Merge.html">.Merge</a></li>
                             <li><a href="#">.MergeInit</a></li>
-                            <li><a href="#">.Split</a></li>
                             <li><a href="#">.Reverse</a></li>
-                            <li><a href="#">.AddClassToListItems</a></li>
+                            <li><a href="#">.Split</a></li>
+                            <li><a href="#">.Source / .SetSource</a></li>
+                            <li><a href="#">.Target / .SetTarget</a></li>
 
                         </ul>
                     </li>
@@ -40,7 +37,6 @@
                     </li>
                 </ul>
             </li>
-            <li><a href="#" class="active">Aptera.Ecommerce</a></li>
         </ul>
     </div>
 
@@ -139,8 +135,7 @@
         var nav2 = $("#mergeListDemo .nav2");
         var nav3 = $("#mergeListDemo .nav3");
         var nav4 = $("#mergeListDemo .nav4");
-
-        Aptera.Web.List.InitMerge(nav1, nav2, 1);
+        Aptera.Web.List.MergeInit(nav1, nav2, 1);
         //Aptera.Web.List.Merge();
 
 

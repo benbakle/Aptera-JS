@@ -1,54 +1,98 @@
 ﻿var Aptera = (function () {
 
     // :: THE OBJECT TO RETURN :: //
-    var aptera_obj = {};
+    var _aptera_obj = {};
 
+    // :: Aptera.Web OBJECT :: //
     var Web = (function () {
 
-        var web_obj = {};
-        // :::::::::::::::::::::::::::: //
-        // :: APTERA.WEB.LIST OBJECT :: //
-        // :::::::::::::::::::::::::::: //
-        var List = {
-            Source: null,
-            Target: null,
-            InsertPostion: null,
-            Reverse: false,
-            MergeInit: function (source, target, position) {
-                this.SetSource(source);
-                this.SetTarget(target);
-                this.SetInsertPosition(position);
-            },
-            SetSource: function (source) {
-                this.Source = source;
-                this.SetDataSourceList();
-            },
-            SetTarget: function (target) {
-                this.Target = target;
-            },
-            SetInsertPosition: function (position) {
-                this.InsertPosition = position;
-            },
-            Merge: function () {
-                var ulItems = this.Items(this.Source);
-                var position = this.InsertPosition;
-                this.AddClassToItems(this.Source, "appended-item");
-                if (this.ItemCount(this.Target) == 0) {
-                    this.Target.append(ulItems);
-                } else {
-                    (position == 1) ? ulItems.insertBefore($('> li:first-child', this.Target)) : ulItems.insertAfter($('> li:nth-child(' + (position - 1) + ')', this.Target))
-                }
-            },
-            SetDataSourceList: function () {
+        // :: THE OBJECT TO RETURN :: //
+        var _web_obj = {};
+
+        // :: Aptera.Web.List OBJECT :: //
+        var List = (function () {
+
+            // :: Return Object :: //
+            var _list_obj = {};
+
+            // :: Private variables :: //
+            var _source;
+            var _target;
+            var _pos;
+            var _setDataListSrc = function () {
                 _self = this;
-                $("li", this.Source).each(function () {
+                $("li", _source).each(function () {
                     if ($(this).attr("data-source-list") == undefined) {
-                        $(this).attr("data-source-list", _self.Source.attr("class"));
+                        $(this).attr("data-source-list", _source.attr("class"));
                     }
                 });
-            },
-            Split: function () {
-                $("li", this.Target).each(function () {
+            }
+            var _createSub = function (li) {
+                return $(li).addClass("dropdown").append("<ul></ul>");
+            }
+            var _toLinkListItem = function (itemName, href) {
+                href = href || "javascript:void(0)";
+                return "<li class='inserted-item'><a href='" + href + "'>" + itemName + "</a></li>"
+            }
+
+
+            // :: Public variables :: //
+            var Source = function (list) {
+                if (list == undefined) {
+                    return _source
+                }
+                _source = list
+                _setDataListSrc();
+            }
+            var Target = function (list) {
+                return ((list == undefined) ? _target : _target = list);
+            }
+            var Position = function (pos) {
+                if (pos == undefined) {
+                    return _pos
+                } else {
+                    _pos = pos;
+                }
+            }
+            var MergeInit = function (source, target, position) {
+                Source(source);
+                Target(target);
+                Position(position);
+            }
+            var Merge = function () {
+                var ulItems = Items(_source);
+                var position = _pos;
+                AddClassToItems(_source, "appended-item");
+                if (ItemCount(_target) == 0) {
+                    _target.append(ulItems);
+                } else {
+                    (position == 1) ? ulItems.insertBefore($('> li:first-child', _target)) : ulItems.insertAfter($('> li:nth-child(' + (position - 1) + ')', _target))
+                }
+            }
+            var MergeAsSub = function(newListItem) {
+                if (newListItem || "") {
+                    var listItem = _toLinkListItem(newListItem);
+                    AddListItemToList(listItem, _target, _pos);
+                }
+                _createSub($("> li:nth-child(" + _pos + ")", _target));
+                ulInsertInto = $("> li:nth-child(" + _pos + ") > ul", _target);
+                Target(ulInsertInto);
+                Merge();
+            }
+            var MergeAsDropdownItem = function (itemName, subPosition) {
+                var targetParent = GetNthListItem(_target, _pos);
+                if (ListIsEmpty($(" > ul ", targetParent))) {
+                    _createSub(targetParent);
+                    $(" > ul", targetParent).append("<li style='display:none'></li>")
+                }
+                var insertItem = _toLinkListItem(itemName);
+                AddListItemToList(insertItem, $("> li:nth-child(" + _pos + ") > ul", _target), subPosition);
+                Position(subPosition);
+                Target($("> li:nth-child(" + _pos + ") > ul", _target));
+                MergeAsSub();
+            }
+            var Split = function () {
+                $("li", _target).each(function () {
                     var dataSource = $(this).attr("data-source-list");
                     if (dataSource != undefined) {
                         var sourceListClassArray = ($(this).attr("data-source-list")).split(" ");
@@ -61,30 +105,61 @@
                         $(this).removeClass("appended-item");
                     }
                 })
-
-            },
-            Items: function (ul) {
-                return $('> li', ul);
-            },
-            ItemCount: function (ul) {
-                return ul.find(">li").length;
-            },
-            Reverse: function (ul) {
+            }
+            var Reverse = function (ul) {
                 return ul.children().each(function (i, li) {
                     ul.prepend(li).addClass("reversed")
                 });
-            },
-            AddClassToItems: function (ul, className) {
+            }
+            var ListLength = function (ul) {
+                return ul.find(">li").length;
+            }
+            var AddClassToItems = function (ul, className) {
                 $("li", ul).each(function () {
                     $(this).addClass(className);
                 });
             }
+            var Items = function (ul) {
+                return $('> li', ul);
+            }
+            var ItemCount = function (ul) {
+                return ul.find(">li").length;
+            }
+            var GetNthListItem = function (ul, childNum) {
+                return ul.find("> li:nth-child(" + childNum + ")");
+            }
+            var ListIsEmpty = function (ul) {
+                return ListLength(ul) == 0;
+            }
+            var AddListItemToList = function (listItem, ul, position) {
+                var ul_len = ListLength(ul);
+                (position > ul_len) ? $("> li:last-child", ul).after(listItem) : $("> li:nth-child(" + position + ")", ul).before(listItem);
+            }
 
-        }
+            // :: Expose public variables through List object :: //
+            _list_obj.Source = Source;
+            _list_obj.Target = Target;
+            _list_obj.Position = Position;
+            _list_obj.MergeInit = MergeInit;
+            _list_obj.Merge = Merge;
+            _list_obj.MergeAsSub = MergeAsSub;
+            _list_obj.MergeAsDropdownItem = MergeAsDropdownItem;
+            _list_obj.Split = Split;
+            _list_obj.Reverse = Reverse;
+            _list_obj.ListLength = ListLength;
+            _list_obj.AddClassToItems = AddClassToItems;
+            _list_obj.Items = Items;
+            _list_obj.ItemCount = ItemCount;
+            _list_obj.GetNthListItem = GetNthListItem;
+            _list_obj.ListIsEmpty = ListIsEmpty;
+            _list_obj.AddListItemToList = AddListItemToList;
 
-        // ::::::::::::::::::::::::::::: //
-        // :: APTERA.WEB.INPUT OBJECT :: //
-        // ::::::::::::::::::::::::::::: //
+            // :: Return object :: //
+            return _list_obj;
+
+        })();
+
+        // :: Aptera.Web.Input OBJECT :: //
         var Input = {
             Replace: {
                 _self: null,
@@ -134,24 +209,18 @@
             }
         }
 
-        // ::  VARIABLES/OBJECTS ARE MADE PUBLIC BY :: //
-        // :: ATTACHING THEM TO THE "web_obj" OBJECT :: //
-        web_obj.List = List;
-        web_obj.Input = Input;
+        // :: ATTACH TO RETURN OBJECT _web_obj :: //
+        _web_obj.List = List;
+        _web_obj.Input = Input;
 
         // :: EXPOSE "web_obj" OBJECT TO THE WORLD :: //
-        return web_obj;
+        return _web_obj;
 
     })();
-
-    // ::  VARIABLES/OBJECTS ARE MADE PUBLIC BY :: //
-    // :: ATTACHING THEM TO THE "aptera_obj" OBJECT :: //
-    aptera_obj.Web = Web;
+    // :: ATTACH TO RETURN OBJECT _aptera_obj :: //
+    _aptera_obj.Web = Web;
 
     // :: EXPOSE "aptera_obj" OBJECT TO THE WORLD :: //
-    return aptera_obj;
-
-
-
+    return _aptera_obj;
 
 })();

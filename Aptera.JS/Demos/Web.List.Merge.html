@@ -32,7 +32,7 @@
                     <li class="dropdown">
                         <a href="#">.Input</a>
                         <ul>
-                            <li><a href="Web.Input.Replace.html">.Replace</a></li>
+                            <li><a href="DWeb.Input.Replace.html">.Replace</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -64,27 +64,27 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.</p>
         <div id="mergeListDemo">
             <ul class="nav1 another-class">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Content</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="javascript:void(0)">Home</a></li>
+                <li><a href="javascript:void(0)">Content</a></li>
+                <li><a href="javascript:void(0)">About Us</a></li>
             </ul>
             <br />
             <br />
             <ul class="nav2">
-                <li><a href="#">Features</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Blogs</a></li>
-                <li><a href="#">Gallary</a></li>
+                <li><a href="javascript:void(0)">Features</a></li>
+                <li><a href="javascript:void(0)">News</a></li>
+                <li><a href="javascript:void(0)">Blogs</a></li>
+                <li><a href="javascript:void(0)">Gallary</a></li>
             </ul>
             <ul class="nav3">
-                <li><a href="#">Sponsers</a></li>
-                <li><a href="#">Copyright</a></li>
-                <li><a href="#">Mission</a></li>
+                <li><a href="javascript:void(0)">Sponsers</a></li>
+                <li><a href="javascript:void(0)">Copyright</a></li>
+                <li><a href="javascript:void(0)">Mission</a></li>
             </ul>
             <ul class="nav4">
-                <li><a href="#">Main Office</a></li>
-                <li><a href="#">Production</a></li>
-                <li><a href="#">Shipping</a></li>
+                <li><a href="javascript:void(0)">Main Office</a></li>
+                <li><a href="javascript:void(0)">Production</a></li>
+                <li><a href="javascript:void(0)">Shipping</a></li>
             </ul>
             <div class="console-wrapper">
                 <div class="row">
@@ -135,10 +135,15 @@
         var nav2 = $("#mergeListDemo .nav2");
         var nav3 = $("#mergeListDemo .nav3");
         var nav4 = $("#mergeListDemo .nav4");
-        Aptera.Web.List.MergeInit(nav1, nav2, 1);
-        //Aptera.Web.List.Merge();
 
+        var List = Aptera.Web.List;
 
+        List.MergeInit(nav1, nav2, 1);
+        List.Merge();
+        List.Source(nav3);
+        List.MergeAsSub();
+        List.Source(nav4);
+        List.MergeAsDropdownItem("Fuk Mui", 1);
 
 
         //:: DROPDOWN ITEMS TOGGLE ::/

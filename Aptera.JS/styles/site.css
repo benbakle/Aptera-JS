@@ -4,7 +4,7 @@ h1 { font-weight: 700; margin-bottom: 40px; font-family: century gothic; }
     h1 span { color: #fcbe16; font-weight: 700; }
 h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
-.code-text { font-family: "Courier New"; font-weight:700;}
+.code-text { font-family: "Courier New"; font-weight: 700; }
 
 #homePage { position: relative; }
 
@@ -12,8 +12,11 @@ h2 { color: #333; font-family: century gothic; font-weight: 700; }
     .sidebar h1 { text-align: center; margin: 35px auto; }
 
 .main { min-height: 100vh; padding: 10px 100px; display: inline-block; width: calc(100% - 300px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
-
-
+    .main h1 { color: #555; }
+    /*.main h2 { color: #f66f16; }*/
+    .main h3 { color: #f3521c; }
+    
+    
 .console-wrapper { }
 .console-display { font-family: 'Courier New'; }
 

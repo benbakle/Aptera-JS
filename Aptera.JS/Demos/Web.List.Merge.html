@@ -7,32 +7,58 @@
     <link href="../styles/bootstrap.css" rel="stylesheet" />
     <link href="../styles/bootstrap-theme.css" rel="stylesheet" />
     <link href="../styles/site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 </head>
 <body>
+    <nav class="main-nav-wrapper">
+        <a href="#"><h1><span>a</span>ptera<span>JS</span></h1></a>
+        <ul class="main-nav">
+            <li><a href="#" class="active"><span>a</span>ptera<span>JS</span></a></li>
+            <li><a href="#" class=""><span>a</span>ptera<span>C#</span></a></li>
+            <li><a href="#" class=""><span>a</span>ptera<span>SF</span></a></li>
+            <li><a href="#" class=""><span>a</span>ptera<span>Angular</span></a></li>
+        </ul>
+    </nav>
     <div class="sidebar">
-        <h1><span>a</span>ptera<span>JS</span></h1>
         <ul class="nav2">
             <li>
-                <a href="#" class="active">Aptera.Web</a>
+                <a href="#" class="active">Web</a>
                 <ul>
                     <li class="dropdown">
-                        <a href="#">.List</a>
+                        <a href="#">List</a>
                         <ul>
-                            <li><a href="#">.AddClassToItems</a></li>
-                            <li><a href="#">.InsertPosition / .SetInsertPosition</a></li>
-                            <li><a href="Web.List.Merge.html">.Merge</a></li>
-                            <li><a href="#">.MergeInit</a></li>
-                            <li><a href="#">.Reverse</a></li>
-                            <li><a href="#">.Split</a></li>
-                            <li><a href="#">.Source / .SetSource</a></li>
-                            <li><a href="#">.Target / .SetTarget</a></li>
+                            <li><a href="#">AddClassToItems</a></li>
+                            <li><a href="#">Position</a></li>
+                            <li><a href="Web.List.Merge.html">Merge</a></li>
+                            <li><a href="#">MergeInit</a></li>
+                            <li><a href="#">Reverse</a></li>
+                            <li><a href="#">Split</a></li>
+                            <li><a href="#">Source</a></li>
+                            <li><a href="#">Target</a></li>
 
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#">.Input</a>
+                        <a href="#">Input</a>
                         <ul>
-                            <li><a href="DWeb.Input.Replace.html">.Replace</a></li>
+                            <li><a href="Web.Input.Replace.html">Replace</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="active">Ecommerce</a>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Cart</a>
+                        <ul>
+                            <li><a href="#">New</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Item</a>
+                        <ul>
+                            <li><a href="#">Add</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -40,36 +66,83 @@
         </ul>
     </div>
 
-    <div class="main">
-        <h1>Aptera.Web.List.Merge()</h1>
+    <div class="main method-define">
+        <h1>Aptera.Web.List.Merge( )</h1>
         <p>
-            The <span class="code-text">.Merge()</span> method executes a merge on two defined lists (<span class="code-text">source</span> and <span class="code-text">target</span>) at a defined position within the <span class="code-text">target</span> list.
+            The <span class="code-text">.Merge()</span> method executes a merge on two
+            lists at a given position within the target list.
         </p>
-        <h2>Syntax</h2>
-        <code class="code-text">
-            Aptera.Web.List.Merge();
-        </code>
-        <h3>Parameters</h3>
-        <strong>none</strong>
-        <blockquote>
-            <span>NA</span>
+        <blockquote class="note">
+            The list's <em>source</em>, <em>target</em> and insert <em>position</em>
+            are set using other <a href="#" class="code">.List</a> methods.
+            <br />
+            <strong>Related Methods:</strong>
+            <a href="#" class="quick-view-btn code" data-toggle="modal" data-target="#myModal">.MergetInit()</a>
+            <!-- Modal content-->
+            <div id="myModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title code">.MergeInit(<em>source</em>,<em>target</em>,<em>position</em>)</h3>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="quick-view-btn code">.Source()</a>
+            <a href="#" class="quick-view-btn code">.Target()</a>
+            <a href="#" class="quick-view-btn code">.Position()</a>
         </blockquote>
-        <h3>Return value</h3>
-        Completes the merge action returns <i>undefined</i>.
+        <h2>Syntax</h2>
+        <pre>Aptera.Web.List.Merge();</pre>
+        <h2>Parameters</h2>
+        <div class="parameters-wrapper">
+            <table class="parameters">
+                <tbody>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td><em>none</em></td>
+                        <td>Variables are set using other methods. Strictly calls the action to merge the lists.</td>
+                    </tr>
+                    <tr>
+                        <td><em>separator</em></td>
+                        <td>Optional. Specifies the character, or the regular expression, to use for splitting the string. If omitted, the entire string will be returned (an array with only one item)</td>
+                    </tr>
+                    <tr>
+                        <td><em>limit</em></td>
+                        <td>Optional. An integer that specifies the number of splits, items after the split limit will not be included in the array</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h2>Return Value</h2>
+        <pre>undefined</pre>
+        <blockquote class="note"> Completes the merge action. returns <em>undefined</em>.</blockquote>
         <h2>Description</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.</p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at
+            tellus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula
+            elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit,
+        </p>
         <span class="note"></span>
-        <h3>Examples</h3>
-        <h2>Using .Merge()</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus. Pellentesque in ipsum id orci porta dapibus.</p>
+        <h2>Examples</h2>
         <div id="mergeListDemo">
             <ul class="nav1 another-class">
                 <li><a href="javascript:void(0)">Home</a></li>
                 <li><a href="javascript:void(0)">Content</a></li>
                 <li><a href="javascript:void(0)">About Us</a></li>
             </ul>
-            <br />
-            <br />
             <ul class="nav2">
                 <li><a href="javascript:void(0)">Features</a></li>
                 <li><a href="javascript:void(0)">News</a></li>
@@ -138,12 +211,12 @@
 
         var List = Aptera.Web.List;
 
-        List.MergeInit(nav1, nav2, 1);
-        List.Merge();
-        List.Source(nav3);
+        List.MergeInit(nav1, nav2, 2);
         List.MergeAsSub();
-        List.Source(nav4);
-        List.MergeAsDropdownItem("Fuk Mui", 1);
+        List.MergeInit(nav3, nav2, 1);
+        List.MergeAsDropdownItem("INSERT 1", 1);
+        //List.MergeInit(nav4, nav2, 3);
+        //List.MergeAsDropdownItem("INSERT 2", 1);
 
 
         //:: DROPDOWN ITEMS TOGGLE ::/

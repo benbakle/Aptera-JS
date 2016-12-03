@@ -35,7 +35,6 @@
                 return "<li class='inserted-item'><a href='" + href + "'>" + itemName + "</a></li>"
             }
 
-
             // :: Public variables :: //
             var Source = function (list) {
                 if (list == undefined) {
@@ -79,6 +78,22 @@
                 Target(ulInsertInto);
                 Merge();
             }
+
+
+
+            //function insertListAsDropdownItem(itemName, subList, intoList, parentPosition, subPosition) {
+            //    var targetParent = getNthListItem(intoList, parentPosition);
+            //    if (listIsEmpty($(" > ul ", targetParent))) {
+            //        createSubList(targetParent);
+            //        $(" > ul", targetParent).append("<li style='display:none'></li>")
+            //    }
+            //    var insertItem = toLinkListItem(itemName);
+            //    addListItemToList(insertItem, $("> li:nth-child(" + parentPosition + ") > ul", intoList), subPosition);
+            //    mergeListAsSub(subList, $("> li:nth-child(" + parentPosition + ") > ul", intoList), subPosition);
+            //}
+
+
+
             var MergeAsDropdownItem = function (itemName, subPosition) {
                 var targetParent = GetNthListItem(_target, _pos);
                 if (ListIsEmpty($(" > ul ", targetParent))) {

@@ -1,22 +1,57 @@
 ﻿@import url('font-awesome.css');
-body { background-color: #2F4050; color: #e1e1e1; font-size: 14px; padding: 0; margin: 0; }
-h1 { font-weight: 700; margin-bottom: 40px; font-family: century gothic; }
-    h1 span { color: #fcbe16; font-weight: 700; }
-h2 { color: #333; font-family: century gothic; font-weight: 700; }
 
+body { background-color: #12435c; color: #e1e1e1; font-family: 'Titillium Web', sans-serif; font-size: 22px; padding: 0; margin: 0; }
+
+h1 { display: inline-block; font-weight: 700; font-size: 45px; margin-bottom: 40px; font-family: century gothic; padding: 25px 0; margin: 0; }
+    h1 span { color: #fcbe16; font-weight: 700; }
+h2 { font-family: Calibri; font-weight: 700; font-size: 36px; color: #333; margin-top: 30px; }
+h3 { font-family: century gothic; font-weight: 700; color: #111; }
+
+/* :: Note Styling :: */
+blockquote.note { position: relative; line-height: 30px; background-color: #FFCC75; border-left-color: #fcbe16; color: #000; font-size: 15px; padding: 10px 15px 10px 60px; margin: 30px auto; }
+    blockquote.note:before { position: absolute; content: "\f044"; font-family: FontAwesome; color: #9C6200; left: 15px; top: calc(50% - 15px); font-size: 30px; }
+
+/* :: Code Styling :: */
+.code { font-family: 'Courier New'; color: #000; font-weight: 700; }
+    .code em { font-weight: normal; }
+pre { background-color: transparent; border-color: #ccc; }
+    pre code { font-family: 'Courier New'; font-size: 16px; }
 .code-text { font-family: "Courier New"; font-weight: 700; }
 
 #homePage { position: relative; }
 
-.sidebar { display: inline-block; float: left; width: 300px; min-height: 100vh; }
-    .sidebar h1 { text-align: center; margin: 35px auto; }
+.main-nav-wrapper { position: relative; width: 100%; background-color: #222; border-bottom: #000; height: 100px; padding: 0 50px; }
+    .main-nav-wrapper a > h1 { color: #eee; }
+    .main-nav-wrapper ul.main-nav { list-style: none; float: right; margin: 0; margin-right: 25px; }
+        .main-nav-wrapper ul.main-nav > li { float: left; }
+            .main-nav-wrapper ul.main-nav > li > a { display: inline-block; padding: 35px 25px; color: #eee; font-family: Calibri; }
+                .main-nav-wrapper ul.main-nav > li > a.active { opacity: .6; }
 
-.main { min-height: 100vh; padding: 10px 100px; display: inline-block; width: calc(100% - 300px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
-    .main h1 { color: #555; }
-    /*.main h2 { color: #f66f16; }*/
-    .main h3 { color: #f3521c; }
-    
-    
+                .main-nav-wrapper ul.main-nav > li > a span { color: #fcbe16; }
+
+/* :: Sidebar Styling :: */
+.sidebar { display: inline-block; float: left; width: 300px; min-height: 100vh; }
+    .sidebar h1 { text-align: center; margin: 50px auto; }
+
+.main { min-height: 100vh; padding: 25px 50px 100px 50px; display: inline-block; width: calc(100% - 300px); background-color: #fff; color: #333; box-shadow: -10px 10px 100px #333; }
+
+.parameters-wrapper { border: 1px solid #ccc; border-radius: 5px; padding: 10px; }
+table.parameters { border-collapse: collapse; }
+    table.parameters tr th,
+    table.parameters tr td { font-size: 18px; padding: 10px; border-bottom: 1px solid #eee; }
+        table.parameters tr td:first-child { border-right: 1px solid #eee; }
+    table.parameters tr:last-child td { border-bottom: none; }
+
+    table.parameters tr th:first-child { width: 25%; border-right: 1px solid #eee; }
+
+a.quick-view-btn { display: inline-block; padding: 5px 10px; border: 1px solid #111; border-radius: 3px; color: #000; margin: 0 5px; font-size: 14px; line-height: 1em; }
+    a.quick-view-btn:hover { background-color: #fcbe16; text-decoration: none; }
+    a.quick-view-btn:active,
+    a.quick-view-btn:visited { text-decoration: none; }
+
+.method-define { }
+    .method-define.main h1 { color: #555; }
+
 .console-wrapper { }
 .console-display { font-family: 'Courier New'; }
 
@@ -29,7 +64,7 @@ h2 { color: #333; font-family: century gothic; font-weight: 700; }
     #mergeListDemo .console-wrapper .form-group:before { position: absolute; content: ">"; color: #5485DB; font-size: 24px; left: 25px; bottom: 25px; font-family: 'Courier New'; font-weight: 700; z-index: 10; }
 
 ul.nav1,
-ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
+ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; font-family: Calibri; }
     ul.nav1 > li { float: left; }
         ul.nav1 > li > a { display: inline-block; padding: 0px 15px; margin: 10px 0; text-decoration: none; color: #333; border-right: 1px solid #333; }
         ul.nav1 > li:last-child > a { border: 0; }
@@ -40,23 +75,24 @@ ul.nav2 { list-style: none; padding: 0; margin: 25px 0 25px 0; clear: both; }
             ul.nav1 > li > ul > li > a { display: block; padding: 15px 30px; text-decoration: none; color: #555; }
                 ul.nav1 > li > ul > li > a:hover { background-color: brown; color: #eee; }
 
-    ul.nav2 > li a { display: block; text-decoration: none; padding: 20px 15px; background-color: #0F2131; color: #eee; transition: .25s; }
-    ul.nav2 li > a:hover { text-decoration: underline; }
+ul.nav2 { margin: 0; }
+    ul.nav2 > li a { display: block; text-decoration: none; padding: 20px 15px; background-color: #032E43; color: #eee; transition: .25s; }
+    ul.nav2 > li > a:hover { opacity: .8; }
     ul.nav2 > li.appended-item > a:hover { background-color: pink; }
     ul.nav2 > li > ul { list-style: none; padding: 0; margin: 0; }
-        ul.nav2 > li > ul > li > a { display: block; padding: 10px 30px; text-decoration: none; background-color: #1D2E3E; color: #eee; }
-            ul.nav2 > li > ul > li > a:hover { /*background-color: #FFB200;*/ }
+        ul.nav2 > li > ul > li > a { display: block; padding: 10px 30px; text-decoration: none; background-color: #245972; color: #eee; }
+            ul.nav2 > li > ul > li > a:hover { background-color: #407188; color: #ddd; text-decoration: none; }
+        ul.nav2 > li > ul > li.dropdown > a.active { background-color: #407188; color: #ddd; }
         ul.nav2 > li > ul > li > ul { list-style: none; padding: 0; }
-            ul.nav2 > li > ul > li > ul > li > a { padding: 5px 0; padding-left: 50px; border: 0; background-color: #637381; color: #eee; transition: .5s; }
-                ul.nav2 > li > ul > li > ul > li > a:hover { /*background-color: #ccc;*/ }
+            ul.nav2 > li > ul > li > ul > li > a { padding: 7px 0; font-size: 18px; padding-left: 50px; border: 0; background-color: #333; color: #eee; transition: .25s; }
+                ul.nav2 > li > ul > li > ul > li > a:hover { text-decoration: underline; }
 .dropdown ul { display: none; }
 li.active > ul { display: block; }
-.dropdown > a:after { position: relative; font-family: FontAwesome; content: "\f0da"; width: 10px; padding-left: 10px; display: inline-block; }
+.dropdown > a:after { position: relative; font-family: FontAwesome; content: "\f0da"; width: 10px; font-size: 14px; top: 0; padding-left: 10px; display: inline-block; }
 .dropdown > a.active { }
 
-ul.nav2 > li > ul > li.dropdown > a.active { /*background-color: #ffb200; color:#333;*/ }
 
-.dropdown > a.active:after { content: "\f0d7"; }
+    .dropdown > a.active:after { content: "\f0d7"; }
 
 .nav .dropdown > a:after:hover { content: "\f0d7"; }
 

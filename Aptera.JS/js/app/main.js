@@ -4,7 +4,7 @@ define(function (require) {
     // like:
     var $ = require('jquery');
 
-    var aptera = require('./aptera');
+    //var aptera = require('./aptera');
     var messages = require('./messages');
 
     // Load library/vendor modules using

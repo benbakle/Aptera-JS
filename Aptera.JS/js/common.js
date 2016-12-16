@@ -8,6 +8,7 @@ requirejs.config({
     paths: {
         app: '../app',
         jquery: '../lib/jquery-3.1.1'
+        //bootstrap: '../lib/bootstrap'
     }
 });
 

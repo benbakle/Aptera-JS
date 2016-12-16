@@ -6,7 +6,8 @@
 requirejs.config({
     baseUrl: 'js/lib',
     paths: {
-        app: '../app'
+        app: '../app',
+        jquery: '../lib/jquery-3.1.1'
     }
 });
 

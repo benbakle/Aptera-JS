@@ -98,21 +98,5 @@
 
 </body>
 </html>
-<script src="../js/libraries/jquery-3.1.1.min.js"></script>
-<script src="../js/libraries/bootstrap.min.js"></script>
-<script src="../js/aptera.beta-1.0.js"></script>
-<script>
-    $(document).ready(function () {
-        var $inputReplace = $(".input-replace");
-        Aptera.Web.Input.Replace.Init($inputReplace);
-
-
-        //:: DROPDOWN ITEMS TOGGLE ::/
-        $(".dropdown > a").click(function () {
-            $(this).siblings("ul").stop(false, false).slideToggle();
-            $(this).toggleClass("active");
-        });
-    
-    });
-
-</script>
+<script src="js/config.js"></script>
+<script data-main="js/app/main" src="js/lib/require.js"></script>

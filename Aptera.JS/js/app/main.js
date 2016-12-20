@@ -7,7 +7,7 @@ require(['aptera', 'bootstrap'], function (aptera) {
         aptera.test();
         aptera.web.test();
         aptera.web.list.test();
-        aptera.web.input.Init();
+       // aptera.web.input.Init();
 
         //:: MOCK CONSOLE ::/
 

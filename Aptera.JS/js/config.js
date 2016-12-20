@@ -10,9 +10,13 @@ var require = {
             "bootstrap" : {"deps" : ['jquery']}
         },
         paths: {
-            app: 'app',
             jquery: '../lib/jquery-3.1.1',
             bootstrap: '../lib/bootstrap',
-            print:'../lib/print'
+            print: '../lib/print',
+            aptera: '../lib/apteraJS/aptera',
+            web: '../lib/apteraJS/web',
+            list: '../lib/apteraJS/list'
+
+
         }
 };

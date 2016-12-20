@@ -6,25 +6,11 @@
     //var bootstrap = require('bootstrap');
     //$(document).ready(function () {
 
-require(['jquery','./messages', 'print','bootstrap'], function ($, messages, print) {
+require(['jquery','aptera', 'bootstrap'], function ($, aptera) {
 
         // DOM ready
         $(function(){
-
-            //var aptera = require('./aptera');
-          //  var messages = require();
-
-            // Load library/vendor modules using
-            // full IDs, like:
-            //var print = require();
-
-
-            print(messages.getHello());
-
-
-
-
-
+            console.log(aptera.web.list.test());
 
             //:: DROPDOWN ITEMS TOGGLE ::/
             $(".dropdown > a").click(function () {

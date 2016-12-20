@@ -1,5 +1,6 @@
 ﻿define(function (require) {
     var Input = {
+   // return {
         Replace: {
             _self: null,
             $formgroup: null,
@@ -44,9 +45,11 @@
                         $replaceWith.removeClass("active");
                     }
                 });
-            }
+            },
+            test: function () { console.log(":: INPUT ::");}
         }
     }
+    return Input;
 
 
 });

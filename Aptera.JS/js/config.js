@@ -12,11 +12,10 @@ var require = {
         paths: {
             jquery: '../lib/jquery-3.1.1',
             bootstrap: '../lib/bootstrap',
-            print: '../lib/print',
-            aptera: '../lib/apteraJS/aptera',
-            web: '../lib/apteraJS/web',
-            list: '../lib/apteraJS/list'
-
+            aptera: '../lib/ApteraJS/aptera',
+            web: '../lib/ApteraJS/Web/web',
+            list: '../lib/ApteraJS/Web/list',
+            input: '../lib/ApteraJS/Web/input'
 
         }
 };

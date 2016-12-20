@@ -156,7 +156,7 @@
     _list_obj.GetNthListItem = GetNthListItem;
     _list_obj.ListIsEmpty = ListIsEmpty;
     _list_obj.AddListItemToList = AddListItemToList;
-    _list_obj.test = function () { return "test" };
+    _list_obj.test = function () { console.log(":: Aptera Web List Object Test Successful ::") };
 
 
     // :: Return object :: //

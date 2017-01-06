@@ -12,7 +12,6 @@ define(function (require) {
 
     // :: ATTACH TO RETURN OBJECT _aptera_obj :: //
     _aptera.web = require('web');
-    _aptera.input = require('input');
     _aptera.test = function () { console.log(":: Aptera Object Test Successful ::") };
 
 
